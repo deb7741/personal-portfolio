@@ -68,12 +68,7 @@ export default function PortfolioSection() {
           ))}
         </div>
         
-        <div className="text-center mt-12 fade-in">
-          <a href="https://github.com/deb7741" className="inline-flex items-center px-8 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
-            View All Projects on GitHub
-            <i className="fab fa-github ml-2"></i>
-          </a>
-        </div>
+        
       </div>
     </section>
   );
