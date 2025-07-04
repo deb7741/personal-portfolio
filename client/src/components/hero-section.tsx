@@ -1,0 +1,52 @@
+export default function HeroSection() {
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-100 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="fade-in">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+              Hi, I'm <span className="gradient-text">John Smith</span>
+            </h1>
+            <h2 className="text-2xl lg:text-3xl text-gray-600 mb-6 font-light">
+              Full Stack Developer & Designer
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              I'm passionate about creating beautiful, functional web experiences that solve real-world problems. 
+              With expertise in modern technologies and a keen eye for design, I bring ideas to life through code.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#portfolio" className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                View My Work
+                <i className="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all">
+                Get In Touch
+              </a>
+            </div>
+            <div className="flex space-x-6 mt-8">
+              <a href="https://github.com/yourusername" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <i className="fab fa-github text-2xl"></i>
+              </a>
+              <a href="https://linkedin.com/in/yourusername" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <i className="fab fa-linkedin text-2xl"></i>
+              </a>
+              <a href="https://twitter.com/yourusername" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <i className="fab fa-twitter text-2xl"></i>
+              </a>
+              <a href="mailto:your.email@example.com" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <i className="fas fa-envelope text-2xl"></i>
+              </a>
+            </div>
+          </div>
+          <div className="fade-in flex justify-center lg:justify-end">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+              alt="John Smith - Professional headshot" 
+              className="rounded-2xl shadow-2xl w-80 h-80 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
