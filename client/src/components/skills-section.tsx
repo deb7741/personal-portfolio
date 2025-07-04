@@ -1,24 +1,24 @@
 export default function SkillsSection() {
   const skillCategories = [
     {
-      title: "Frontend",
-      icon: "fas fa-laptop-code",
-      skills: ["React", "Vue.js", "TypeScript", "Tailwind CSS", "Next.js"]
+      title: "Circuit Design",
+      icon: "fas fa-microchip",
+      skills: ["Op-Amps", "ADC/DAC", "Bandgap References", "LNAs", "Filters"]
     },
     {
-      title: "Backend",
-      icon: "fas fa-server",
-      skills: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB"]
-    },
-    {
-      title: "Tools",
+      title: "EDA Tools",
       icon: "fas fa-tools",
-      skills: ["Git", "Docker", "AWS", "Figma", "VS Code"]
+      skills: ["Cadence Virtuoso", "Spectre", "Quantus", "ModelSim", "Synopsys DC"]
     },
     {
-      title: "Design",
-      icon: "fas fa-palette",
-      skills: ["UI/UX", "Figma", "Adobe XD", "Prototyping", "Wireframing"]
+      title: "Programming",
+      icon: "fas fa-code",
+      skills: ["Python", "MATLAB", "Verilog", "SystemVerilog", "SKILL"]
+    },
+    {
+      title: "Digital Design",
+      icon: "fas fa-laptop-code",
+      skills: ["FPGA", "RTL Design", "FSMs", "DSP", "Mixed Signal"]
     }
   ];
 
@@ -28,7 +28,7 @@ export default function SkillsSection() {
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl font-bold mb-4">Skills & Expertise</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Technologies and tools I work with to bring ideas to life
+            Circuit design, simulation tools, and programming languages I work with
           </p>
         </div>
         

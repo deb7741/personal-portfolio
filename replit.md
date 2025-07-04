@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack portfolio website application built with React, TypeScript, and Express. The application showcases a personal portfolio with sections for about, skills, projects, and contact information. It uses modern web technologies including Tailwind CSS for styling, shadcn/ui for UI components, and includes a backend setup with database integration capabilities.
+This is a responsive personal portfolio website for Debjyoti Chowbey, an Electronics Engineer and Digital Design Specialist. Built with React, TypeScript, and Express, the application showcases research experience, circuit design projects, and technical expertise. Currently working as Research Assistant at Raman Research Institute on the SARAS 3 radio telescope project.
 
 ## System Architecture
 

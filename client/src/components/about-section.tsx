@@ -5,7 +5,7 @@ export default function AboutSection() {
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I'm a passionate developer with a strong background in creating innovative web solutions
+            Electronics Engineer with expertise in VLSI design, analog circuits, and precision digital systems
           </p>
         </div>
         
@@ -13,20 +13,21 @@ export default function AboutSection() {
           <div className="lg:col-span-2 fade-in">
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-600 leading-relaxed mb-6">
-                With over 5 years of experience in web development, I've had the privilege of working with 
-                diverse clients and teams to bring digital visions to life. My journey started with a 
-                Computer Science degree, but my passion for creating beautiful, user-centric applications 
-                has driven me to continuously learn and adapt to new technologies.
+                I'm a final year B.Tech student in Electronics and Communication Engineering at Tezpur University, 
+                graduating in 2025 with a CGPA of 8.06. Currently working as a Research Assistant at the prestigious 
+                Raman Research Institute on the SARAS 3 project, designing digital spectrometer backends for detecting 
+                ultra-faint 21-cm signals from Cosmic Dawn.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                I specialize in full-stack development with a particular love for React, Node.js, and 
-                modern web technologies. When I'm not coding, you'll find me exploring new design trends, 
-                contributing to open-source projects, or mentoring aspiring developers.
+                My expertise spans analog circuit design, VLSI systems, and digital signal processing. I have hands-on 
+                experience with Cadence Virtuoso, MATLAB, Python, and FPGA design. I've published research on low-power 
+                CMOS operational amplifier design and have been recognized with the "Best Project" award for my final 
+                year thesis among 60 students.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                I believe in writing clean, maintainable code and creating experiences that not only 
-                look great but also perform exceptionally well. Every project is an opportunity to 
-                learn something new and push the boundaries of what's possible on the web.
+                Beyond academics, I've served as coordinator of the Astronomy Club, leading 200+ participants in 
+                astrophotography sessions. I'm passionate about precision electronics, space research, and mentoring 
+                fellow students in analog design fundamentals.
               </p>
             </div>
           </div>
@@ -37,19 +38,23 @@ export default function AboutSection() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <i className="fas fa-map-marker-alt text-blue-600 mr-3"></i>
-                  <span>San Francisco, CA</span>
+                  <span>India</span>
                 </div>
                 <div className="flex items-center">
                   <i className="fas fa-graduation-cap text-blue-600 mr-3"></i>
-                  <span>BS Computer Science</span>
+                  <span>B.Tech ECE, Tezpur University</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-code text-blue-600 mr-3"></i>
-                  <span>5+ Years Experience</span>
+                  <i className="fas fa-award text-blue-600 mr-3"></i>
+                  <span>CGPA: 8.06/10</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-coffee text-blue-600 mr-3"></i>
-                  <span>Coffee Enthusiast</span>
+                  <i className="fas fa-telescope text-blue-600 mr-3"></i>
+                  <span>Research @ Raman Research Institute</span>
+                </div>
+                <div className="flex items-center">
+                  <i className="fas fa-star text-blue-600 mr-3"></i>
+                  <span>GATE EC 2025 Qualified</span>
                 </div>
               </div>
               

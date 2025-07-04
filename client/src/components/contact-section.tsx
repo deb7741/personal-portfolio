@@ -53,7 +53,7 @@ export default function ContactSection() {
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind? Let's work together to bring your ideas to life
+            Interested in collaboration or research opportunities? Let's connect and discuss exciting projects
           </p>
         </div>
         
@@ -132,9 +132,9 @@ export default function ContactSection() {
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Let's connect</h3>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  I'm always interested in new opportunities and exciting projects. 
-                  Whether you have a question about my work or want to discuss a potential 
-                  collaboration, feel free to reach out.
+                  I'm always interested in research collaborations, internship opportunities, 
+                  and exciting electronics projects. Whether you have questions about my work 
+                  or want to discuss potential partnerships, feel free to reach out.
                 </p>
               </div>
               
@@ -145,7 +145,17 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-gray-600">john.smith@example.com</p>
+                    <p className="text-gray-600">debjyoti.chowbey@gmail.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                    <i className="fas fa-phone text-white"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Phone</h4>
+                    <p className="text-gray-600">+91 75869 23485</p>
                   </div>
                 </div>
                 
@@ -155,7 +165,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Location</h4>
-                    <p className="text-gray-600">San Francisco, CA</p>
+                    <p className="text-gray-600">India</p>
                   </div>
                 </div>
                 
@@ -173,21 +183,21 @@ export default function ContactSection() {
               <div className="pt-8">
                 <h4 className="font-semibold mb-4">Follow me</h4>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/yourusername" 
+                  <a href="https://github.com/deb7741" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="https://linkedin.com/in/yourusername" 
+                  <a href="https://linkedin.com/in/debjyotichowbey" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/yourusername" 
+                  <a href="mailto:debjyoti.chowbey@gmail.com" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <i className="fab fa-twitter"></i>
+                    <i className="fas fa-envelope"></i>
                   </a>
-                  <a href="https://dribbble.com/yourusername" 
+                  <a href="tel:+917586923485" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <i className="fab fa-dribbble"></i>
+                    <i className="fas fa-phone"></i>
                   </a>
                 </div>
               </div>

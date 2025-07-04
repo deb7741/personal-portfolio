@@ -1,24 +1,24 @@
 export default function PortfolioSection() {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution built with React, Node.js, and Stripe integration. Features include user authentication, shopping cart, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      technologies: ["React", "Node.js", "MongoDB"],
+      title: "Low-Power CMOS Operational Amplifier Design",
+      description: "Designed and optimized a low-power two-stage Op-Amp in 45 nm CMOS achieving 67 dB gain, 3.7 MHz GBW, and 2 V/µs slew rate under 10 µW. Awarded 'Best Project' among 60 students. Published in IEEE DevIC 2025.",
+      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      technologies: ["Cadence Virtuoso", "45nm CMOS", "Post-Layout Sim"],
       techColors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-purple-100 text-purple-800"]
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, team collaboration features, and advanced analytics dashboard.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      technologies: ["Vue.js", "Firebase", "Chart.js"],
+      title: "8-bit ALU Design using Verilog",
+      description: "Developed an 8-bit ALU supporting 16 operations including arithmetic, logic, shift, and compare with 4-bit opcode decoder. Simulated using Xilinx ISE and ModelSim with comprehensive verification.",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      technologies: ["Verilog", "Xilinx ISE", "FPGA"],
       techColors: ["bg-blue-100 text-blue-800", "bg-red-100 text-red-800", "bg-yellow-100 text-yellow-800"]
     },
     {
-      title: "Weather Forecast App",
-      description: "A beautiful weather application with location-based forecasts, interactive maps, and customizable notifications for weather alerts.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      technologies: ["React Native", "OpenWeather API", "Redux"],
+      title: "CCD Sensor Characterization",
+      description: "Characterized dark current response of Apogee Alta F6 CCD, reducing thermal noise by 15% via temperature control. Built Python automation pipeline for data calibration and hot pixel correction.",
+      image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      technologies: ["Python", "MaximDL", "Sensor Analysis"],
       techColors: ["bg-blue-100 text-blue-800", "bg-orange-100 text-orange-800", "bg-indigo-100 text-indigo-800"]
     }
   ];
@@ -29,7 +29,7 @@ export default function PortfolioSection() {
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A selection of projects that showcase my skills and passion for development
+            Research projects and circuit designs that showcase my expertise in electronics engineering
           </p>
         </div>
         
@@ -72,7 +72,7 @@ export default function PortfolioSection() {
         </div>
         
         <div className="text-center mt-12 fade-in">
-          <a href="https://github.com/yourusername" className="inline-flex items-center px-8 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+          <a href="https://github.com/deb7741" className="inline-flex items-center px-8 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
             View All Projects on GitHub
             <i className="fab fa-github ml-2"></i>
           </a>
