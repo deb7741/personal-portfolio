@@ -51,10 +51,11 @@ export default function SkillsSection() {
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl font-bold mb-4">Skills & Expertise</h2>
+    <section id="skills" className="py-24 bg-gray-50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50"></div>
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-20 fade-in">
+          <h2 className="text-4xl font-bold mb-6">Skills & Expertise</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Circuit design, simulation tools, and programming languages I work with
           </p>
@@ -62,7 +63,7 @@ export default function SkillsSection() {
 
         {/* Interactive Skills Overview */}
         <div className="mb-16 fade-in">
-          <div className="bg-white rounded-xl p-8 shadow-lg">
+          <div className="bg-white rounded-xl p-10 shadow-lg">
             <h3 className="text-2xl font-semibold text-center mb-8">Technical Expertise Overview</h3>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {skillCategories.map((category, index) => (
@@ -89,7 +90,7 @@ export default function SkillsSection() {
                   <div key={skillIndex} className="skill-item">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium text-gray-700">{skill.name}</span>
-                      <span className="text-sm text-gray-500">{skill.level}%</span>
+                      <span className="text-sm text-gray-500 font-semibold">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3">
                       <div 
@@ -104,65 +105,33 @@ export default function SkillsSection() {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 skills-grid">
           {skillCategories.map((category, index) => (
             <div key={index} className="fade-in">
-              <div className="bg-white rounded-xl p-8 card-hover shadow-lg">
-                <div className="flex items-center mb-6">
-                  <div className="text-blue-600 mr-4">
+              <div className="bg-white rounded-xl p-6 card-hover shadow-lg h-full">
+                <div className="flex flex-col items-center text-center mb-4">
+                  <div className="text-blue-600 mb-3">
                     <i className={`${category.icon} text-3xl`}></i>
                   </div>
-                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                  <h3 className="text-lg font-semibold">{category.title}</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="skill-item">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-gray-700">{skill.name}</span>
-                        <span className="text-sm text-gray-500">{skill.level}%</span>
-                      </div>
+                    <div key={skillIndex} className="text-center">
+                      <span className="text-xs font-medium text-gray-700 block mb-1 skill-progress-text">{skill.name}</span>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
                           className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>
+                      <span className="text-xs text-gray-500 mt-1 block skill-progress-text font-semibold">{skill.level}%</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Research & Technical Skills */}
-        <div className="mt-16 fade-in">
-          <div className="bg-white rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-semibold mb-6 text-center">Research & Technical Competencies</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-blue-600 mb-3">
-                  <i className="fas fa-satellite-dish text-4xl"></i>
-                </div>
-                <h4 className="font-semibold mb-2">Radio Astronomy</h4>
-                <p className="text-gray-600 text-sm">SARAS 3 telescope backend design for 21-cm signal detection</p>
-              </div>
-              <div className="text-center">
-                <div className="text-blue-600 mb-3">
-                  <i className="fas fa-microscope text-4xl"></i>
-                </div>
-                <h4 className="font-semibold mb-2">VLSI Research</h4>
-                <p className="text-gray-600 text-sm">Low-power analog circuit design and optimization</p>
-              </div>
-              <div className="text-center">
-                <div className="text-blue-600 mb-3">
-                  <i className="fas fa-users text-4xl"></i>
-                </div>
-                <h4 className="font-semibold mb-2">Leadership</h4>
-                <p className="text-gray-600 text-sm">Astronomy Club coordination and STEM outreach</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

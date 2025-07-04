@@ -48,61 +48,60 @@ export default function PublicationsSection() {
     <section id="publications" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl font-bold mb-4">Publications & Recognition</h2>
+          <h2 className="text-4xl font-bold mb-4">Research & Impact</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Research contributions and academic achievements in electronics engineering
+            Publications, achievements, and contributions to electronics engineering research
           </p>
         </div>
 
-        {/* Publications */}
+        {/* Featured Publication */}
         <div className="mb-16 fade-in">
-          <h3 className="text-2xl font-semibold mb-8">Research Publications</h3>
-          <div className="space-y-6">
-            {publications.map((pub, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-3">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${
-                        pub.status === 'Published' 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-yellow-100 text-yellow-800'
-                      }`}>
-                        {pub.status}
-                      </span>
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                        {pub.type}
-                      </span>
-                    </div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">{pub.title}</h4>
-                    <p className="text-gray-700 mb-2">
-                      <span className="font-medium">Authors:</span> {pub.authors}
-                    </p>
-                    <p className="text-gray-600 mb-2">
-                      <span className="font-medium">Published in:</span> {pub.venue}, {pub.location} ({pub.year})
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {pub.abstract}
-                    </p>
-                  </div>
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-10 border border-blue-100">
+            <div className="flex flex-col lg:flex-row lg:items-start">
+              <div className="text-blue-600 mb-4 lg:mr-6 lg:mt-1 lg:mb-0">
+                <i className="fas fa-file-alt text-3xl"></i>
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
+                    Published
+                  </span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                    IEEE DevIC 2025
+                  </span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
+                    Best Project Award
+                  </span>
                 </div>
-                <div className="flex flex-wrap gap-4">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  Low-Power CMOS Operational Amplifier Design in 45nm Technology
+                </h3>
+                <div className="text-gray-600 mb-4 space-y-1">
+                  <p><strong>Authors:</strong> D. Chowbey, R.K. Baruah</p>
+                  <p><strong>Conference:</strong> IEEE International Conference on Devices, Circuits and Communication</p>
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Comprehensive design of a low-power two-stage CMOS operational amplifier achieving 67 dB gain, 
+                  3.7 MHz GBW, and 2 V/µs slew rate under 10 µW power consumption. Demonstrates advanced analog 
+                  circuit techniques and post-layout verification in 45nm technology.
+                </p>
+                <div className="flex flex-wrap gap-3">
                   <a 
-                    href={`https://doi.org/${pub.doi}`}
+                    href="https://doi.org/10.1109/DevIC63749.2025.11012572"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     <i className="fas fa-external-link-alt mr-2"></i>
-                    View Paper (DOI)
+                    View Paper
                   </a>
                   <button className="inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
-                    <i className="fas fa-quote-left mr-2"></i>
-                    Cite
+                    <i className="fas fa-download mr-2"></i>
+                    Download PDF
                   </button>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
 

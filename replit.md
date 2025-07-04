@@ -89,6 +89,7 @@ This is a responsive personal portfolio website for Debjyoti Chowbey, an Electro
 ```
 Changelog:
 - July 04, 2025. Initial setup
+- July 04, 2025. Enhanced portfolio with streamlined skills section, collapsible project details, improved mobile responsiveness, background gradients, and renamed "Research" to "Research & Impact"
 ```
 
 ## User Preferences

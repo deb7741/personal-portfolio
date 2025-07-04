@@ -128,3 +128,52 @@
     width: 100%;
   }
 }
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .skill-progress-text {
+    font-size: 0.75rem;
+  }
+  
+  .collapsible-content {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .project-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fade-in {
+    transform: translateY(20px);
+  }
+}
+
+/* Smooth transitions for collapsible content */
+.collapse-enter {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.collapse-enter-active {
+  opacity: 1;
+  max-height: 2000px;
+  transition: opacity 300ms ease-in-out, max-height 500ms ease-in-out;
+}
+
+.collapse-exit {
+  opacity: 1;
+  max-height: 2000px;
+}
+
+.collapse-exit-active {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 300ms ease-in-out, max-height 500ms ease-in-out;
+  overflow: hidden;
+}
