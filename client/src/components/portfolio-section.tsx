@@ -59,10 +59,7 @@ export default function PortfolioSection() {
                   </div>
                   <div className="flex space-x-4">
                     <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                      <i className="fas fa-external-link-alt mr-1"></i>Live Demo
-                    </a>
-                    <a href="#" className="text-gray-600 hover:text-gray-800 font-medium">
-                      <i className="fab fa-github mr-1"></i>Code
+                      <i className="fas fa-external-link-alt mr-1"></i>Project Details
                     </a>
                   </div>
                 </div>
