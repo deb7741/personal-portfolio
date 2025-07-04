@@ -29,7 +29,7 @@ export default function HeroSection() {
               <a href="https://linkedin.com/in/debjyotichowbey" className="text-gray-600 hover:text-blue-600 transition-colors">
                 <i className="fab fa-linkedin text-2xl"></i>
               </a>
-              <a href="mailto:debjyoti.chowbey@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <a href="mailto:chowbeydebjyoti@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
                 <i className="fas fa-envelope text-2xl"></i>
               </a>
               <a href="tel:+917586923485" className="text-gray-600 hover:text-blue-600 transition-colors">
@@ -39,8 +39,8 @@ export default function HeroSection() {
           </div>
           <div className="fade-in flex justify-center lg:justify-end">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
-              alt="John Smith - Professional headshot" 
+              src="@assets/WhatsApp Image 2025-06-17 at 09.18.33_632750ac_1751659569827.jpg" 
+              alt="Debjyoti Chowbey - Professional headshot" 
               className="rounded-2xl shadow-2xl w-80 h-80 object-cover"
             />
           </div>

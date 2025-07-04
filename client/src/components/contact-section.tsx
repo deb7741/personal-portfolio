@@ -145,7 +145,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-gray-600">debjyoti.chowbey@gmail.com</p>
+                    <p className="text-gray-600">chowbeydebjyoti@gmail.com</p>
                   </div>
                 </div>
                 
@@ -191,7 +191,7 @@ export default function ContactSection() {
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="mailto:debjyoti.chowbey@gmail.com" 
+                  <a href="mailto:chowbeydebjyoti@gmail.com" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
                     <i className="fas fa-envelope"></i>
                   </a>

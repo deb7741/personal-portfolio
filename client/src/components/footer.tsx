@@ -12,7 +12,7 @@ export default function Footer() {
             <a href="https://linkedin.com/in/debjyotichowbey" className="text-gray-300 hover:text-white transition-colors">
               <i className="fab fa-linkedin text-xl"></i>
             </a>
-            <a href="mailto:debjyoti.chowbey@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+            <a href="mailto:chowbeydebjyoti@gmail.com" className="text-gray-300 hover:text-white transition-colors">
               <i className="fas fa-envelope text-xl"></i>
             </a>
             <a href="tel:+917586923485" className="text-gray-300 hover:text-white transition-colors">
