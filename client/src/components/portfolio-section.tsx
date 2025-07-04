@@ -57,11 +57,7 @@ export default function PortfolioSection() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex space-x-4">
-                    <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                      <i className="fas fa-external-link-alt mr-1"></i>Project Details
-                    </a>
-                  </div>
+
                 </div>
               </div>
             </div>

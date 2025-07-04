@@ -24,7 +24,8 @@ export default function Navigation() {
             <a href="#home" className="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
             <a href="#about" className="nav-link text-gray-700 hover:text-blue-600 font-medium">About</a>
             <a href="#skills" className="nav-link text-gray-700 hover:text-blue-600 font-medium">Skills</a>
-            <a href="#portfolio" className="nav-link text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
+            <a href="#portfolio" className="nav-link text-gray-700 hover:text-blue-600 font-medium">Projects</a>
+            <a href="#publications" className="nav-link text-gray-700 hover:text-blue-600 font-medium">Research</a>
             <a href="#contact" className="nav-link text-gray-700 hover:text-blue-600 font-medium">Contact</a>
           </div>
           
@@ -43,7 +44,8 @@ export default function Navigation() {
               <a href="#home" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
               <a href="#about" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">About</a>
               <a href="#skills" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">Skills</a>
-              <a href="#portfolio" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
+              <a href="#portfolio" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">Projects</a>
+              <a href="#publications" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">Research</a>
               <a href="#contact" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
             </div>
           </div>

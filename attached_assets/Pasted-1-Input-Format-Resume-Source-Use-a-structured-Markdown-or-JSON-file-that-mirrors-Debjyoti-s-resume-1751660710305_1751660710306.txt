@@ -1,0 +1,64 @@
+1. Input Format
+Resume Source: Use a structured Markdown or JSON file that mirrors Debjyoti’s resume sections (Education, Publications, Experience, Projects, Skills, Leadership).
+
+If Markdown, use headings (## Experience) and list items (- Designed and optimized a low‑power Op‑Amp…).
+
+If JSON, organize as an array of section objects, each with a title and items array.
+
+Action: I (Debjyoti) will supply the resume in Markdown. Please confirm you can parse it.
+
+2. Framework & Libraries
+Framework: React (Next.js optional).
+
+Rationale: Widespread support on Replit, easy integration of MD→JSX, robust ecosystem.
+
+Styling: Tailwind CSS for rapid, consistent styling.
+
+Charts: Chart.js via react-chartjs-2 for skill‑level bar or radial charts.
+
+Routing: React Router (or Next.js pages) to handle sections /projects, /skills, etc.
+
+3. Content Rendering
+About Me: Dynamically pull from Markdown frontmatter. Include a brief bio, current role, and research focus.
+
+Skills & Expertise:
+
+Render each category (Analog Design, Digital/VLSI, Tools, Programming, Research & Outreach) as a chart.
+
+Proficiency values configurable in the Markdown/JSON.
+
+Featured Projects:
+
+Display cards with title, dates, key tools, and summary.
+
+“View Details” button opens a modal with technical metrics (e.g., “67 dB gain, 3.7 MHz GBW”) and embedded code snippets.
+
+Publications Widget:
+
+Parse a publications array and output a list with title, venue, year, and DOI link.
+
+Leadership & Outreach:
+
+Simple list with icons (Font Awesome) for Astronomy Club, NSS, etc.
+
+4. Code & Demo Embeds
+GitHub Gists:
+
+Embed Python code snippets (e.g., MVDR filter demo) via Gist <script> embed.
+
+Static Screenshots / Waveforms:
+
+For FPGA ALU and Op‑Amp simulation results, host static images in /public and display with lightbox.
+
+5. UI/UX & Interactivity
+Dark/Light Mode Toggle
+
+Responsive Design for mobile/tablet
+
+Animated Progress Bars for Skills
+
+Collapsible Sections for dense technical details
+
+“Download Resume” button linking to PDF in /public
+
+“Schedule a Meeting” CTA (placeholder for Calendly link)
