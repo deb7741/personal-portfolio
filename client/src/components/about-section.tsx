@@ -59,7 +59,7 @@ export default function AboutSection() {
               </div>
               
               <div className="mt-8">
-                <a href="#" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                <a href="https://drive.google.com/file/d/1Wm4Pu4a7zQCSd9chDRMdTSKH6ric_qHM/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
                   <i className="fas fa-download mr-2"></i>
                   Download Resume
                 </a>

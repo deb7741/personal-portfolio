@@ -39,7 +39,7 @@ export default function HeroSection() {
           </div>
           <div className="fade-in flex justify-center lg:justify-end">
             <img 
-              src="@assets/WhatsApp Image 2025-06-17 at 09.18.33_632750ac_1751659569827.jpg" 
+              src="https://drive.google.com/uc?export=view&id=1M2N_2NeMdN9G_SNrLajl_UREvKL7OyQL" 
               alt="Debjyoti Chowbey - Professional headshot" 
               className="rounded-2xl shadow-2xl w-80 h-80 object-cover"
             />

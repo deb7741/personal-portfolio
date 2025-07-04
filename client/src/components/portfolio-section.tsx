@@ -3,7 +3,7 @@ export default function PortfolioSection() {
     {
       title: "Low-Power CMOS Operational Amplifier Design",
       description: "Designed and optimized a low-power two-stage Op-Amp in 45 nm CMOS achieving 67 dB gain, 3.7 MHz GBW, and 2 V/µs slew rate under 10 µW. Awarded 'Best Project' among 60 students. Published in IEEE DevIC 2025.",
-      image: "https://images.unsplash.com/photo-1606801772956-50ae1e5ad7f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "https://www.electronics-tutorials.ws/wp-content/uploads/2013/08/opamp1.gif",
       technologies: ["Cadence Virtuoso", "45nm CMOS", "Post-Layout Sim"],
       techColors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-purple-100 text-purple-800"]
     },
