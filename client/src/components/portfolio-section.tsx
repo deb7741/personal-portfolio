@@ -1,198 +1,178 @@
-import { useState } from 'react';
-import Icon from "@/components/icon";
+import { useState } from "react";
+import Icon, { type IconName } from "@/components/icon";
+
+interface Project {
+  title: string;
+  where: string;
+  period: string;
+  icon: IconName;
+  accent: string;
+  description: string;
+  technologies: string[];
+  details: { heading: string; icon: IconName; items: string[] }[];
+}
+
+const projects: Project[] = [
+  {
+    title: "Device-Aware Spiking Neural Networks",
+    where: "IISc Bangalore",
+    period: "Aug 2026 — Present",
+    icon: "microchip",
+    accent: "from-violet-600 to-indigo-600",
+    description:
+      "Characterised a subthreshold neuron and current-mode synapse in 180 nm CMOS, injected the measured non-idealities into a 2-layer SNN on MNIST, and recovered almost all of the lost accuracy with hardware-aware retraining.",
+    technologies: ["180 nm CMOS", "Cadence Virtuoso", "Python / snntorch"],
+    details: [
+      {
+        heading: "Circuit results",
+        icon: "cogs",
+        items: ["2.17 pJ/spike", "8.5% neuron mismatch", "23.3% synapse mismatch", "~3.5-bit effective weights"],
+      },
+      {
+        heading: "Network results",
+        icon: "trophy",
+        items: ["Ideal 97.51% → silicon 87.81%", "9.36 of 9.70 points recovered", "97.17% ± 0.30% final accuracy", "5 held-out mismatch realisations"],
+      },
+    ],
+  },
+  {
+    title: "Analog Ising Machine",
+    where: "IISc Bangalore",
+    period: "2026",
+    icon: "laptop-code",
+    accent: "from-fuchsia-600 to-purple-600",
+    description:
+      "Current-mode CMOS primitives in 65 nm that map NP-hard combinatorial problems — 3-SAT, Max-Cut and prime factorization — onto circuit dynamics, using current coupling and spin-threshold detection.",
+    technologies: ["65 nm CMOS", "Current-mode", "Spin-threshold detection"],
+    details: [
+      { heading: "Problems mapped", icon: "cogs", items: ["3-SAT", "Max-Cut", "Prime factorization"] },
+      { heading: "Output", icon: "file", items: ["IMPEDE — submitted to AsianHOST 2026"] },
+    ],
+  },
+  {
+    title: "Ultrasound Analog Front-End",
+    where: "IISc Bangalore",
+    period: "2026 — Present",
+    icon: "microchip",
+    accent: "from-sky-600 to-blue-600",
+    description:
+      "Designing the receive signal chain of a low-power ultrasound imaging front-end in 180 nm CMOS: a variable-gain amplifier and a 10-bit SAR ADC.",
+    technologies: ["180 nm CMOS", "VGA", "10-bit SAR ADC"],
+    details: [
+      { heading: "Blocks", icon: "cogs", items: ["Variable-Gain Amplifier", "10-bit SAR ADC"] },
+      { heading: "Output", icon: "file", items: ["Energy-efficient receiver with analog envelope-based feature extraction — submitted to DATE 2027"] },
+    ],
+  },
+  {
+    title: "16K-Point FFT Spectrometer",
+    where: "Raman Research Institute — SARAS",
+    period: "Jul 2025 — Jan 2026",
+    icon: "telescope",
+    accent: "from-emerald-600 to-teal-600",
+    description:
+      "Full-precision 16K-point spectrometer on a Xilinx RFSoC ZCU216 using a parallel FFT architecture in Verilog, built to recover the faint spectral signature of neutral hydrogen from the early universe.",
+    technologies: ["Verilog", "RFSoC ZCU216", "Parallel FFT"],
+    details: [
+      { heading: "Highlights", icon: "cogs", items: ["16,384-point full-precision FFT", "RF data-acquisition chain", "21-cm cosmology backend"] },
+    ],
+  },
+  {
+    title: "Low-Power Two-Stage Op-Amp (45 nm)",
+    where: "Tezpur University",
+    period: "Sep 2024 — May 2025",
+    icon: "award",
+    accent: "from-blue-600 to-indigo-700",
+    description:
+      "Full-custom op-amp addressing short-channel effects and gate leakage in 45 nm, verified post-layout across all PVT corners. Best B.Tech Thesis, Class of 2025, and the basis for two first-author IEEE papers.",
+    technologies: ["45 nm CMOS", "Cadence Virtuoso", "Quantus"],
+    details: [
+      { heading: "Specifications", icon: "cogs", items: ["DC gain: 67 dB", "GBW: 3.7 MHz", "Power: < 10 µW"] },
+      { heading: "Recognition", icon: "trophy", items: ["Best B.Tech Thesis 2025", "IEEE DevIC 2025", "IEEE GCON 2026"] },
+    ],
+  },
+  {
+    title: "CCD Sensor Characterisation",
+    where: "Tezpur University",
+    period: "May 2024 — Jun 2024",
+    icon: "telescope",
+    accent: "from-amber-500 to-orange-600",
+    description:
+      "Characterised dark current, thermal noise and hot-pixel distributions, and built an automated Python calibration pipeline improving low-light signal fidelity.",
+    technologies: ["Python", "Image Sensors", "Noise Analysis"],
+    details: [
+      { heading: "Pipeline", icon: "cogs", items: ["Dark-current mapping", "Thermal-noise profiling", "Hot-pixel detection", "Automated calibration"] },
+    ],
+  },
+];
 
 export default function PortfolioSection() {
-  const [expandedProject, setExpandedProject] = useState<number | null>(null);
-  const projects = [
-    {
-      title: "Low-Power CMOS Operational Amplifier Design",
-      description: "Designed and optimized a low-power two-stage Op-Amp in 45 nm CMOS achieving 67 dB gain, 3.7 MHz GBW, and 2 V/µs slew rate under 10 µW. Awarded 'Best Project' among 60 students. Published in IEEE DevIC 2025.",
-      image: "https://www.electronics-tutorials.ws/wp-content/uploads/2013/08/opamp1.gif",
-      technologies: ["Cadence Virtuoso", "45nm CMOS", "Post-Layout Sim"],
-      techColors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-purple-100 text-purple-800"],
-      technicalDetails: {
-        specifications: [
-          "Gain: 67 dB",
-          "GBW: 3.7 MHz", 
-          "Slew Rate: 2 V/µs",
-          "Power: 10 µW",
-          "CMRR: 90 dB",
-          "PSRR: 140 dB"
-        ],
-        tools: ["Cadence Virtuoso", "ADE L/XL", "Layout XL", "Spectre", "Quantus"],
-        achievements: ["Best Project Award", "IEEE DevIC 2025 Publication", "Top 5% Class Performance"]
-      }
-    },
-    {
-      title: "8-bit ALU Design using Verilog",
-      description: "Developed an 8-bit ALU supporting 16 operations including arithmetic, logic, shift, and compare with 4-bit opcode decoder. Simulated using Xilinx ISE and ModelSim with comprehensive verification.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      technologies: ["Verilog", "Xilinx ISE", "FPGA"],
-      techColors: ["bg-blue-100 text-blue-800", "bg-red-100 text-red-800", "bg-yellow-100 text-yellow-800"],
-      technicalDetails: {
-        specifications: [
-          "16 Operations Supported",
-          "8-bit Data Width",
-          "4-bit Opcode Decoder",
-          "Zero/Carry Flag Logic",
-          "Optimized Timing Paths"
-        ],
-        tools: ["Xilinx ISE", "ModelSim", "Verilog HDL", "FPGA Implementation"],
-        achievements: ["Full Functional Verification", "Timing Closure Achieved", "Resource Optimization"]
-      }
-    },
-    {
-      title: "CCD Sensor Characterization",
-      description: "Characterized dark current response of Apogee Alta F6 CCD, reducing thermal noise by 15% via temperature control. Built Python automation pipeline for data calibration and hot pixel correction.",
-      image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      technologies: ["Python", "MaximDL", "Sensor Analysis"],
-      techColors: ["bg-blue-100 text-blue-800", "bg-orange-100 text-orange-800", "bg-indigo-100 text-indigo-800"],
-      technicalDetails: {
-        specifications: [
-          "15% Noise Reduction",
-          "Temperature Control",
-          "Dark Frame Mapping",
-          "Hot Pixel Correction",
-          "Automated Calibration"
-        ],
-        tools: ["Python", "MaximDL", "Apogee Alta F6", "Data Analysis"],
-        achievements: ["Improved Photometric Accuracy", "Automation Pipeline", "Thermal Optimization"]
-      }
-    }
-  ];
+  const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
     <section id="portfolio" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative">
       <div className="absolute inset-0 bg-white/60"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 fade-in">
-          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-4xl font-bold mb-4">Projects</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Research projects and circuit designs that showcase my expertise in electronics engineering
+            Circuits, systems and research I've built
           </p>
         </div>
-        
-        <div className="space-y-8">
-          {projects.map((project, index) => (
-            <div key={index} className="fade-in">
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 project-layout">
-                  <div className="relative">
-                    <img
-                      src={project.image}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      width={800}
-                      height={400}
-                      className="w-full h-64 lg:h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  </div>
-                  <div className="p-6 sm:p-8 lg:p-10">
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{project.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span 
-                          key={techIndex}
-                          className={`px-3 py-1 rounded-full text-sm font-medium ${project.techColors[techIndex]}`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <button
-                      type="button"
-                      aria-expanded={expandedProject === index}
-                      onClick={() => setExpandedProject(expandedProject === index ? null : index)}
-                      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      <Icon name={expandedProject === index ? "chevron-up" : "chevron-down"} className="h-4 w-4 mr-2" />
-                      {expandedProject === index ? 'Hide' : 'View'} Technical Details
-                    </button>
 
-                    {/* Collapsible Technical Details */}
-                    {expandedProject === index && (
-                      <div className="mt-6 p-6 bg-gray-50 rounded-xl border-l-4 border-blue-500 collapse-enter-active">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 collapsible-content">
-                          <div>
-                            <h4 className="font-semibold text-gray-900 mb-3">
-                              <Icon name="cogs" className="h-4 w-4 mr-2 text-blue-600" />
-                              Specifications
-                            </h4>
-                            <ul className="space-y-1">
-                              {project.technicalDetails.specifications.map((spec, specIndex) => (
-                                <li key={specIndex} className="text-sm text-gray-600 flex items-center">
-                                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 flex-shrink-0"></span>
-                                  {spec}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-gray-900 mb-3">
-                              <Icon name="tools" className="h-4 w-4 mr-2 text-green-600" />
-                              Tools Used
-                            </h4>
-                            <ul className="space-y-1">
-                              {project.technicalDetails.tools.map((tool, toolIndex) => (
-                                <li key={toolIndex} className="text-sm text-gray-600 flex items-center">
-                                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2 flex-shrink-0"></span>
-                                  {tool}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-gray-900 mb-3">
-                              <Icon name="trophy" className="h-4 w-4 mr-2 text-yellow-600" />
-                              Achievements
-                            </h4>
-                            <ul className="space-y-1">
-                              {project.technicalDetails.achievements.map((achievement, achievementIndex) => (
-                                <li key={achievementIndex} className="text-sm text-gray-600 flex items-center">
-                                  <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2 flex-shrink-0"></span>
-                                  {achievement}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                        
-                        {/* Special content for Op-Amp project */}
-                        {index === 0 && (
-                          <div className="mt-6 p-4 bg-white rounded-lg border">
-                            <h5 className="font-semibold text-gray-900 mb-3">
-                              <Icon name="file" className="h-4 w-4 mr-2 text-red-600" />
-                              IEEE DevIC 2025 Publication
-                            </h5>
-                            <p className="text-sm text-gray-600 mb-3">
-                              "Low-Power CMOS Operational Amplifier Design in 45nm Technology" - 
-                              D. Chowbey, R.K. Baruah
-                            </p>
-                            <div className="flex flex-wrap gap-3">
-                              <a 
-                                href="https://doi.org/10.1109/DevIC63749.2025.11012572"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded hover:bg-red-700 transition-colors"
-                              >
-                                <Icon name="external-link" className="h-4 w-4 mr-1" />
-                                View Paper (DOI)
-                              </a>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <article key={project.title} className="fade-in bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
+              <div className={`bg-gradient-to-r ${project.accent} px-6 py-5 text-white flex items-center gap-4`}>
+                <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
+                  <Icon name={project.icon} className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-white/80">{project.where} • {project.period}</p>
+                  <h3 className="text-xl font-bold">{project.title}</h3>
                 </div>
               </div>
-            </div>
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-800">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  aria-expanded={expanded === index}
+                  onClick={() => setExpanded(expanded === index ? null : index)}
+                  className="mt-auto self-start inline-flex items-center px-5 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  <Icon name={expanded === index ? "chevron-up" : "chevron-down"} className="h-4 w-4 mr-2" />
+                  {expanded === index ? "Hide" : "View"} Details
+                </button>
+
+                {expanded === index && (
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 bg-gray-50 rounded-xl border-l-4 border-blue-500">
+                    {project.details.map((d) => (
+                      <div key={d.heading}>
+                        <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                          <Icon name={d.icon} className="h-4 w-4 mr-2 text-blue-600" />
+                          {d.heading}
+                        </h4>
+                        <ul className="space-y-1">
+                          {d.items.map((item) => (
+                            <li key={item} className="text-sm text-gray-600 flex items-start">
+                              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </article>
           ))}
         </div>
       </div>

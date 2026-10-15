@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Icon from "@/components/icon";
-
-const EMAIL = "chowbeydebjyoti@gmail.com";
+import { EMAIL, socials } from "@/lib/profile";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -120,8 +119,8 @@ export default function ContactSection() {
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Let's connect</h3>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  I'm always interested in research collaborations, internship opportunities, 
-                  and exciting electronics projects. Whether you have questions about my work 
+                  I'm currently seeking PhD positions in analog/mixed-signal design and analog computing, and I'm always
+                  happy to talk about research collaborations. Whether you have questions about my work 
                   or want to discuss potential partnerships, feel free to reach out.
                 </p>
               </div>
@@ -133,17 +132,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-gray-600">chowbeydebjyoti@gmail.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                    <Icon name="phone" className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Phone</h4>
-                    <p className="text-gray-600">+91 75869 23485</p>
+                    <a href={`mailto:${EMAIL}`} className="text-gray-600 hover:text-blue-600">{EMAIL}</a>
                   </div>
                 </div>
                 
@@ -153,7 +142,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Location</h4>
-                    <p className="text-gray-600">India</p>
+                    <p className="text-gray-600">Bangalore, India</p>
                   </div>
                 </div>
                 
@@ -171,22 +160,17 @@ export default function ContactSection() {
               <div className="pt-8">
                 <h4 className="font-semibold mb-4">Follow me</h4>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/deb7741" aria-label="GitHub" target="_blank" rel="noopener noreferrer" 
-                     className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <Icon name="github" className="h-4 w-4" />
-                  </a>
-                  <a href="https://linkedin.com/in/debjyotichowbey" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" 
-                     className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <Icon name="linkedin" className="h-4 w-4" />
-                  </a>
-                  <a href="mailto:chowbeydebjyoti@gmail.com" aria-label="Email" 
-                     className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <Icon name="envelope" className="h-4 w-4" />
-                  </a>
-                  <a href="tel:+917586923485" aria-label="Phone" 
-                     className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <Icon name="phone" className="h-4 w-4" />
-                  </a>
+                  {socials.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      aria-label={link.label}
+                      {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all"
+                    >
+                      <Icon name={link.icon} className="h-4 w-4" />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>

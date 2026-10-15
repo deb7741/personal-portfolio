@@ -1,4 +1,6 @@
 import Icon from "@/components/icon";
+import { socials } from "@/lib/profile";
+
 export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-100 pt-20">
@@ -9,10 +11,13 @@ export default function HeroSection() {
               Hi, I'm <span className="gradient-text">Debjyoti Chowbey</span>
             </h1>
             <h2 className="text-2xl lg:text-3xl text-gray-600 mb-6 font-light">
-              Electronics Engineer & Digital Design Specialist
+              Analog &amp; Mixed-Signal IC Design Researcher
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              I'm passionate about precision electronics design and cutting-edge research. Currently working as a Research Assistant at Raman Research Institute on the SARAS 3 radio telescope project, designing digital spectrometer backends to detect ultra-faint cosmic signals.
+              Research Associate at the Indian Institute of Science (IISc), Bangalore. I design analog and
+              mixed-signal circuits — from subthreshold op-amps and SAR ADCs to current-mode Ising machines and
+              silicon neurons — so that sensing and computation can happen in the analog domain, at the edge, at
+              ultra-low power.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#portfolio" className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
@@ -24,18 +29,17 @@ export default function HeroSection() {
               </a>
             </div>
             <div className="flex space-x-6 mt-8">
-              <a href="https://github.com/deb7741" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <Icon name="github" className="h-6 w-6" />
-              </a>
-              <a href="https://linkedin.com/in/debjyotichowbey" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <Icon name="linkedin" className="h-6 w-6" />
-              </a>
-              <a href="mailto:chowbeydebjyoti@gmail.com" aria-label="Email" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <Icon name="envelope" className="h-6 w-6" />
-              </a>
-              <a href="tel:+917586923485" aria-label="Phone" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <Icon name="phone" className="h-6 w-6" />
-              </a>
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  {...(s.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  <Icon name={s.icon} className="h-6 w-6" />
+                </a>
+              ))}
             </div>
           </div>
           <div className="fade-in flex justify-center lg:justify-end">
