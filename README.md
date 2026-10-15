@@ -2,7 +2,7 @@
 
 Single-page portfolio built with React 18, TypeScript, Vite and Tailwind CSS. It is a fully static site — no server or database — so it can be hosted free on GitHub Pages, Netlify, Vercel or Cloudflare Pages.
 
-> The newer research portfolio lives in [Debjyoti-Portfolio](https://github.com/deb7741/Debjyoti-Portfolio).
+> **This site has moved.** The portfolio is now a single site: **https://debjyotiportfolio.vercel.app** (source: [Debjyoti-Portfolio](https://github.com/deb7741/Debjyoti-Portfolio)). This repo is kept for reference only; its GitHub Pages address redirects to the new site.
 
 ## Run locally
 
