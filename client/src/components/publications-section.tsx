@@ -1,3 +1,4 @@
+import Icon from "@/components/icon";
 export default function PublicationsSection() {
   const publications = [
     {
@@ -19,28 +20,28 @@ export default function PublicationsSection() {
       description: "Final Year Thesis among 60 students in Class of 2025",
       category: "Academic Excellence",
       year: "2025",
-      icon: "fas fa-trophy"
+      icon: "trophy" as const
     },
     {
       title: "GATE EC 2025 Qualified", 
       description: "Qualified Graduate Aptitude Test in Engineering - Electronics",
       category: "National Examination",
       year: "2025",
-      icon: "fas fa-certificate"
+      icon: "certificate" as const
     },
     {
       title: "Top 5% in ECE Department",
       description: "Academic performance ranking in Electronics Engineering",
       category: "Academic Achievement",
       year: "2025",
-      icon: "fas fa-medal"
+      icon: "medal" as const
     },
     {
       title: "2nd Place - IEEE Texplorer Research Fair",
       description: "Research presentation and technical innovation competition",
       category: "Research Competition",
       year: "2024",
-      icon: "fas fa-award"
+      icon: "award" as const
     }
   ];
 
@@ -59,7 +60,7 @@ export default function PublicationsSection() {
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-10 border border-blue-100">
             <div className="flex flex-col lg:flex-row lg:items-start">
               <div className="text-blue-600 mb-4 lg:mr-6 lg:mt-1 lg:mb-0">
-                <i className="fas fa-file-alt text-3xl"></i>
+                <Icon name="file" className="h-8 w-8" />
               </div>
               <div className="flex-1">
                 <div className="flex flex-wrap gap-2 mb-3">
@@ -78,7 +79,7 @@ export default function PublicationsSection() {
                 </h3>
                 <div className="text-gray-600 mb-4 space-y-1">
                   <p><strong>Authors:</strong> D. Chowbey, R.K. Baruah</p>
-                  <p><strong>Conference:</strong> IEEE International Conference on Devices, Circuits and Communication</p>
+                  <p><strong>Conference:</strong> 2025 Devices for Integrated Circuit (DevIC), Kalyani, India</p>
                 </div>
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   Comprehensive design of a low-power two-stage CMOS operational amplifier achieving 67 dB gain, 
@@ -92,13 +93,9 @@ export default function PublicationsSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
                   >
-                    <i className="fas fa-external-link-alt mr-2"></i>
+                    <Icon name="external-link" className="h-4 w-4 mr-2" />
                     View Paper
                   </a>
-                  <button className="inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
-                    <i className="fas fa-download mr-2"></i>
-                    Download PDF
-                  </button>
                 </div>
               </div>
             </div>
@@ -113,7 +110,7 @@ export default function PublicationsSection() {
               <div key={index} className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
                 <div className="flex items-start">
                   <div className="text-blue-600 mr-4 mt-1">
-                    <i className={`${award.icon} text-2xl`}></i>
+                    <Icon name={award.icon} className="h-6 w-6" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
@@ -141,8 +138,8 @@ export default function PublicationsSection() {
                 <p className="text-gray-300">Published Papers</p>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-400 mb-2">95%</div>
-                <p className="text-gray-300">Op-Amp Efficiency</p>
+                <div className="text-3xl font-bold text-green-400 mb-2">3.7MHz</div>
+                <p className="text-gray-300">Gain-Bandwidth</p>
               </div>
               <div>
                 <div className="text-3xl font-bold text-yellow-400 mb-2">67dB</div>

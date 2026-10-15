@@ -1,3 +1,4 @@
+import Icon from "@/components/icon";
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-white">
@@ -37,30 +38,30 @@ export default function AboutSection() {
               <h3 className="text-2xl font-semibold mb-6">Quick Facts</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <i className="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+                  <Icon name="map-marker" className="h-4 w-4 text-blue-600 mr-3" />
                   <span>India</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                  <Icon name="graduation-cap" className="h-4 w-4 text-blue-600 mr-3" />
                   <span>B.Tech ECE, Tezpur University</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-award text-blue-600 mr-3"></i>
+                  <Icon name="award" className="h-4 w-4 text-blue-600 mr-3" />
                   <span>CGPA: 8.06/10</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-telescope text-blue-600 mr-3"></i>
+                  <Icon name="telescope" className="h-4 w-4 text-blue-600 mr-3" />
                   <span>Research @ Raman Research Institute</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-star text-blue-600 mr-3"></i>
+                  <Icon name="star" className="h-4 w-4 text-blue-600 mr-3" />
                   <span>GATE EC 2025 Qualified</span>
                 </div>
               </div>
               
               <div className="mt-8">
                 <a href="https://drive.google.com/file/d/1Wm4Pu4a7zQCSd9chDRMdTSKH6ric_qHM/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-                  <i className="fas fa-download mr-2"></i>
+                  <Icon name="download" className="h-4 w-4 mr-2" />
                   Download Resume
                 </a>
               </div>

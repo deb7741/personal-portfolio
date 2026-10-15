@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import Icon, { type IconName } from "@/components/icon";
 
 export default function SkillsSection() {
-  const skillCategories = [
+  const skillCategories: { title: string; icon: IconName; skills: { name: string; level: number }[] }[] = [
     {
       title: "Circuit Design",
-      icon: "fas fa-microchip",
+      icon: "microchip",
       skills: [
         { name: "Op-Amps", level: 95 },
         { name: "ADC/DAC", level: 85 },
@@ -15,7 +16,7 @@ export default function SkillsSection() {
     },
     {
       title: "EDA Tools",
-      icon: "fas fa-tools",
+      icon: "tools",
       skills: [
         { name: "Cadence Virtuoso", level: 95 },
         { name: "Spectre", level: 90 },
@@ -26,7 +27,7 @@ export default function SkillsSection() {
     },
     {
       title: "Programming",
-      icon: "fas fa-code",
+      icon: "code",
       skills: [
         { name: "Python", level: 90 },
         { name: "MATLAB", level: 95 },
@@ -37,7 +38,7 @@ export default function SkillsSection() {
     },
     {
       title: "Digital Design",
-      icon: "fas fa-laptop-code",
+      icon: "laptop-code",
       skills: [
         { name: "FPGA", level: 85 },
         { name: "RTL Design", level: 90 },
@@ -69,6 +70,8 @@ export default function SkillsSection() {
               {skillCategories.map((category, index) => (
                 <button
                   key={index}
+                  type="button"
+                  aria-pressed={selectedCategory === index}
                   onClick={() => setSelectedCategory(index)}
                   className={`px-6 py-3 rounded-lg font-medium transition-all ${
                     selectedCategory === index
@@ -76,7 +79,7 @@ export default function SkillsSection() {
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
-                  <i className={`${category.icon} mr-2`}></i>
+                  <Icon name={category.icon} className="h-4 w-4 mr-2 -mt-0.5" />
                   {category.title}
                 </button>
               ))}
@@ -111,7 +114,7 @@ export default function SkillsSection() {
               <div className="bg-white rounded-xl p-6 card-hover shadow-lg h-full">
                 <div className="flex flex-col items-center text-center mb-4">
                   <div className="text-blue-600 mb-3">
-                    <i className={`${category.icon} text-3xl`}></i>
+                    <Icon name={category.icon} className="h-8 w-8" />
                   </div>
                   <h3 className="text-lg font-semibold">{category.title}</h3>
                 </div>

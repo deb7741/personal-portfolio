@@ -1,3 +1,4 @@
+import Icon from "@/components/icon";
 export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-100 pt-20">
@@ -16,32 +17,35 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#portfolio" className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
                 View My Work
-                <i className="fas fa-arrow-right ml-2"></i>
+                <Icon name="arrow-right" className="h-4 w-4 ml-2" />
               </a>
               <a href="#contact" className="inline-flex items-center justify-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all">
                 Get In Touch
               </a>
             </div>
             <div className="flex space-x-6 mt-8">
-              <a href="https://github.com/deb7741" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <i className="fab fa-github text-2xl"></i>
+              <a href="https://github.com/deb7741" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <Icon name="github" className="h-6 w-6" />
               </a>
-              <a href="https://linkedin.com/in/debjyotichowbey" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <i className="fab fa-linkedin text-2xl"></i>
+              <a href="https://linkedin.com/in/debjyotichowbey" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <Icon name="linkedin" className="h-6 w-6" />
               </a>
-              <a href="mailto:chowbeydebjyoti@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <i className="fas fa-envelope text-2xl"></i>
+              <a href="mailto:chowbeydebjyoti@gmail.com" aria-label="Email" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <Icon name="envelope" className="h-6 w-6" />
               </a>
-              <a href="tel:+917586923485" className="text-gray-600 hover:text-blue-600 transition-colors">
-                <i className="fas fa-phone text-2xl"></i>
+              <a href="tel:+917586923485" aria-label="Phone" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <Icon name="phone" className="h-6 w-6" />
               </a>
             </div>
           </div>
           <div className="fade-in flex justify-center lg:justify-end">
-            <img 
-              src="https://media.licdn.com/dms/image/v2/D5603AQGUWeHvcZGPLw/profile-displayphoto-shrink_400_400/B56ZPVWmLuH0Ag-/0/1734451292890?e=1756944000&v=beta&t=7Fk8WGFTA7afyqLO8WWjfSv0O6ubVvymAd8OVZOrE0g" 
-              alt="Debjyoti Chowbey - Professional headshot" 
-              className="rounded-2xl shadow-2xl w-80 h-80 object-cover"
+            <img
+              src={`${import.meta.env.BASE_URL}headshot.webp`}
+              alt="Debjyoti Chowbey"
+              width={320}
+              height={320}
+              fetchPriority="high"
+              className="rounded-2xl shadow-2xl w-64 h-64 sm:w-80 sm:h-80 object-cover"
             />
           </div>
         </div>

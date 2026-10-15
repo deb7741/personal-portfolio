@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Icon from "@/components/icon";
 
 export default function PortfolioSection() {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
@@ -77,9 +78,13 @@ export default function PortfolioSection() {
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 project-layout">
                   <div className="relative">
-                    <img 
-                      src={project.image} 
-                      alt={`${project.title} Project`} 
+                    <img
+                      src={project.image}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={400}
                       className="w-full h-64 lg:h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -101,10 +106,12 @@ export default function PortfolioSection() {
                     </div>
                     
                     <button
+                      type="button"
+                      aria-expanded={expandedProject === index}
                       onClick={() => setExpandedProject(expandedProject === index ? null : index)}
                       className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
                     >
-                      <i className={`fas ${expandedProject === index ? 'fa-chevron-up' : 'fa-chevron-down'} mr-2`}></i>
+                      <Icon name={expandedProject === index ? "chevron-up" : "chevron-down"} className="h-4 w-4 mr-2" />
                       {expandedProject === index ? 'Hide' : 'View'} Technical Details
                     </button>
 
@@ -114,7 +121,7 @@ export default function PortfolioSection() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 collapsible-content">
                           <div>
                             <h4 className="font-semibold text-gray-900 mb-3">
-                              <i className="fas fa-cogs mr-2 text-blue-600"></i>
+                              <Icon name="cogs" className="h-4 w-4 mr-2 text-blue-600" />
                               Specifications
                             </h4>
                             <ul className="space-y-1">
@@ -128,7 +135,7 @@ export default function PortfolioSection() {
                           </div>
                           <div>
                             <h4 className="font-semibold text-gray-900 mb-3">
-                              <i className="fas fa-tools mr-2 text-green-600"></i>
+                              <Icon name="tools" className="h-4 w-4 mr-2 text-green-600" />
                               Tools Used
                             </h4>
                             <ul className="space-y-1">
@@ -142,7 +149,7 @@ export default function PortfolioSection() {
                           </div>
                           <div>
                             <h4 className="font-semibold text-gray-900 mb-3">
-                              <i className="fas fa-trophy mr-2 text-yellow-600"></i>
+                              <Icon name="trophy" className="h-4 w-4 mr-2 text-yellow-600" />
                               Achievements
                             </h4>
                             <ul className="space-y-1">
@@ -160,7 +167,7 @@ export default function PortfolioSection() {
                         {index === 0 && (
                           <div className="mt-6 p-4 bg-white rounded-lg border">
                             <h5 className="font-semibold text-gray-900 mb-3">
-                              <i className="fas fa-file-pdf mr-2 text-red-600"></i>
+                              <Icon name="file" className="h-4 w-4 mr-2 text-red-600" />
                               IEEE DevIC 2025 Publication
                             </h5>
                             <p className="text-sm text-gray-600 mb-3">
@@ -174,13 +181,9 @@ export default function PortfolioSection() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded hover:bg-red-700 transition-colors"
                               >
-                                <i className="fas fa-external-link-alt mr-1"></i>
+                                <Icon name="external-link" className="h-4 w-4 mr-1" />
                                 View Paper (DOI)
                               </a>
-                              <button className="inline-flex items-center px-3 py-2 border border-gray-300 text-gray-700 text-xs font-medium rounded hover:bg-gray-50 transition-colors">
-                                <i className="fas fa-download mr-1"></i>
-                                Download PDF
-                              </button>
                             </div>
                           </div>
                         )}

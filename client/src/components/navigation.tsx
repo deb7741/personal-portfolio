@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Icon from "@/components/icon";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+    <nav aria-label="Main" className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="text-2xl font-bold gradient-text">
@@ -31,15 +32,22 @@ export default function Navigation() {
           
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={toggleMobileMenu} className="text-gray-700 hover:text-blue-600">
-              <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+            <button
+              type="button"
+              onClick={toggleMobileMenu}
+              className="p-2 text-gray-700 hover:text-blue-600"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              <Icon name={mobileMenuOpen ? "times" : "bars"} className="h-6 w-6" />
             </button>
           </div>
         </div>
         
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div id="mobile-nav" className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
               <a href="#home" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
               <a href="#about" onClick={closeMobileMenu} className="text-gray-700 hover:text-blue-600 font-medium">About</a>

@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import Icon from "@/components/icon";
+
+const EMAIL = "chowbeydebjyoti@gmail.com";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -8,7 +10,7 @@ export default function ContactSection() {
     subject: '',
     message: ''
   });
-  const { toast } = useToast();
+  const [opened, setOpened] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,33 +20,14 @@ export default function ContactSection() {
     }));
   };
 
+  // This is a static site with no backend, so the form opens the visitor's
+  // email app with everything pre-filled instead of pretending to send.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      toast({
-        title: "Error",
-        description: "Please fill in all fields.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Here you would typically send the form data to your backend
-    // For now, we'll just show a success message
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    const body = `${formData.message}\n\n— ${formData.name} (${formData.email})`;
+    const href = `mailto:${EMAIL}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+    setOpened(true);
   };
 
   return (
@@ -119,9 +102,14 @@ export default function ContactSection() {
                   type="submit" 
                   className="w-full bg-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
                 >
-                  <i className="fas fa-paper-plane mr-2"></i>
-                  Send Message
+                  <Icon name="paper-plane" className="h-4 w-4 mr-2" />
+                  Send via Email App
                 </button>
+                <p className="text-sm text-gray-500" role="status">
+                  {opened
+                    ? `Your email app should now be open with the message ready to send. If nothing happened, write to ${EMAIL} directly.`
+                    : "This opens your email app with the message pre-filled."}
+                </p>
               </form>
             </div>
           </div>
@@ -141,7 +129,7 @@ export default function ContactSection() {
               <div className="space-y-6">
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                    <i className="fas fa-envelope text-white"></i>
+                    <Icon name="envelope" className="h-4 w-4 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Email</h4>
@@ -151,7 +139,7 @@ export default function ContactSection() {
                 
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                    <i className="fas fa-phone text-white"></i>
+                    <Icon name="phone" className="h-4 w-4 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Phone</h4>
@@ -161,7 +149,7 @@ export default function ContactSection() {
                 
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                    <i className="fas fa-map-marker-alt text-white"></i>
+                    <Icon name="map-marker" className="h-4 w-4 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Location</h4>
@@ -171,7 +159,7 @@ export default function ContactSection() {
                 
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                    <i className="fas fa-clock text-white"></i>
+                    <Icon name="clock" className="h-4 w-4 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold">Response Time</h4>
@@ -183,21 +171,21 @@ export default function ContactSection() {
               <div className="pt-8">
                 <h4 className="font-semibold mb-4">Follow me</h4>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/deb7741" 
+                  <a href="https://github.com/deb7741" aria-label="GitHub" target="_blank" rel="noopener noreferrer" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <i className="fab fa-github"></i>
+                    <Icon name="github" className="h-4 w-4" />
                   </a>
-                  <a href="https://linkedin.com/in/debjyotichowbey" 
+                  <a href="https://linkedin.com/in/debjyotichowbey" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <i className="fab fa-linkedin"></i>
+                    <Icon name="linkedin" className="h-4 w-4" />
                   </a>
-                  <a href="mailto:chowbeydebjyoti@gmail.com" 
+                  <a href="mailto:chowbeydebjyoti@gmail.com" aria-label="Email" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <i className="fas fa-envelope"></i>
+                    <Icon name="envelope" className="h-4 w-4" />
                   </a>
-                  <a href="tel:+917586923485" 
+                  <a href="tel:+917586923485" aria-label="Phone" 
                      className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-all">
-                    <i className="fas fa-phone"></i>
+                    <Icon name="phone" className="h-4 w-4" />
                   </a>
                 </div>
               </div>
